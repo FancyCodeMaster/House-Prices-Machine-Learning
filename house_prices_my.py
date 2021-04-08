@@ -73,7 +73,7 @@ label_encoder = LabelEncoder()
 for i in categorical_label_indices:
     dataset.iloc[: , i] = label_encoder.fit_transform(dataset.iloc[: , i])
 
-# To know the places from where dummy variable is to be removes after oneHotEncoding
+# To know the places from where dummy variable is to be removed after oneHotEncoding
 b = 0;
 i=0;
 dummy_var_indices = [];
@@ -133,6 +133,7 @@ X_train , X_test , y_train , y_test = train_test_split(X , y , test_size = 0.2 ,
 regressor = RandomForestRegressor(n_estimators = 100)
 regressor.fit(X_train , y_train)
 y_pred = regressor.predict(X_test)
+
 
 
 
